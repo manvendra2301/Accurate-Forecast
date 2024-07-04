@@ -103,6 +103,9 @@ max-width: 120px;
 margin: -15px;
 
 }
+.current-weather .icon{
+    text-align: center;
+}
 
 .current-weather .icon h4{
     margin-top: -10px;
@@ -166,7 +169,9 @@ margin: 20px 0;
   .weather-input {
     width: 100%;
   }
-
+  .weather-data h2 {
+    font-size: 1.35rem;
+  }
 }
 
 
