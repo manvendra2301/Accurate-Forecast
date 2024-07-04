@@ -41,7 +41,7 @@ const createWeatherCard =(cityName, weatherItem, index)=>{
 
  //FOR FIVE DAY FORECAST OF WEATHER 
 const getWeatherDetails=(cityName,lat,lon)=>{
-    const WEATHER_API_URL =`http://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    const WEATHER_API_URL =`https://api.openweathermap.org/data/2.5/forecast/?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
     fetch(WEATHER_API_URL).then(res=>res.json()).then(data=>{
         
         //as api is showing weather data of every three hour we have to find the unique dates
@@ -83,7 +83,7 @@ const getCityCoordinates = ()=>{
     const cityName=cityInput.value.trim();
     if(!cityName) return; // return if city name is empty 
 
-    const GEOCODING_API_URL=`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    const GEOCODING_API_URL=`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
 
     //get entered city coordinates (latitude, longitude, and name) from API response 
     fetch(GEOCODING_API_URL).then(res=>res.json()).then(data=>{
@@ -106,7 +106,7 @@ const getUserCoordinates=()=>{
     navigator.geolocation.getCurrentPosition(
         position =>{
             const{ latitude, longitude}= position.coords;
-            const REVERSE_GEOCODING_URL=`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
+            const REVERSE_GEOCODING_URL=`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
 
            //Get city name from coordnates using reverse geocoding API 
         
